@@ -36,6 +36,9 @@
       <plugin path="C:/Program Files (x86)/scala/bin/scala.bat" />
     </plugins>
   </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="mySupportsUserInfoFilter" value="true" />
+  </component>
   <component name="masterDetails">
     <states>
       <state key="GlobalLibrariesConfigurable.UI">
