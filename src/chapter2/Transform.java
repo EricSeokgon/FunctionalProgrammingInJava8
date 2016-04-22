@@ -23,14 +23,21 @@ public class Transform {
         }
         System.out.println(uppercaseNames);
 
-        friends.forEach(name->uppercaseNames2.add(name.toUpperCase()));
+        friends.forEach(name -> uppercaseNames2.add(name.toUpperCase()));
         System.out.println(uppercaseNames2);
 
         friends.stream()
-                .map(name->name.toUpperCase())
-                .forEach(name-> System.out.println(name+ " "));
-
+                .map(name -> name.toUpperCase())
+                .forEach(name -> System.out.print(name + " "));
+        System.out.println();
+        friends.stream()
+                .map(name -> name.length())
+                .forEach(count -> System.out.print(count + " "));
+        friends.stream()
+                .map(String::toUpperCase)
+                .forEach(name -> System.out.print(name));
     }
+
 
 }
 
