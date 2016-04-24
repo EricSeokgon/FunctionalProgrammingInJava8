@@ -3,6 +3,7 @@ package chapter2;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Project: FunctionalProgrammingInJava8
@@ -18,9 +19,17 @@ public class PickElements {
         final List<String> friends = Arrays.asList("SeokGon", "JuYeong", "DaYe", "SeungJun");
         final List<String> startsWithN = new ArrayList<String>();
         for (String name : friends) {
-            if(name.startsWith("N")){
+            if (name.startsWith("S")) {
                 startsWithN.add(name);
             }
         }
+        final List<String> startsWithN2 =
+                friends.stream()
+                        .filter(name -> name.startsWith("J"))
+                        .collect(Collectors.toList());
+
+        System.out.println(String.format("Found %d names", startsWithN.size()));
+        System.out.println(String.format("Found %d names", startsWithN2.size()));
     }
+
 }
