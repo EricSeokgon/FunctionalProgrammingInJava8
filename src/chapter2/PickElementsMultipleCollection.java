@@ -2,6 +2,7 @@ package chapter2;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  * Project: FunctionalProgrammingInJava8
@@ -21,11 +22,13 @@ public class PickElementsMultipleCollection {
         final List<String> editors =
                 Arrays.asList("Brian", "Jackie", "John", "Mike");
 
+        final Predicate<String> startsWithN = name -> name.startsWith("N");
+
         final long countFriendsStartN =
-                friends.stream().filter(name -> name.startsWith("N")).count();
+                friends.stream().filter(startsWithN).count();
         final long countComradesStartN =
-                comrades.stream().filter(name -> name.startsWith("N")).count();
+                comrades.stream().filter(startsWithN).count();
         final long countEditorsStartN =
-                editors.stream().filter(name -> name.startsWith("N")).count();
+                editors.stream().filter(startsWithN).count();
     }
 }
