@@ -14,15 +14,25 @@ import java.util.function.Predicate;
  * To change this template use File | Settings | File Templates.
  */
 public class PickDifferentNames {
+    public static Predicate<String> checkIfStartsWith(final String letter) {
+        return name -> name.startsWith(letter);
+
+    }
+
+
     public static void main(String[] args) {
         final List<String> friends =
                 Arrays.asList("Brian", "Nate", "Neal", "Raju", "Sara", "Scott");
 
         final Predicate<String> startsWithN = name -> name.startsWith("N");
         final Predicate<String> startsWithB = name -> name.startsWith("B");
-        final long countFriendsStartN =
+        long countFriendsStartN =
                 friends.stream().filter(startsWithN).count();
-        final long countFriendsStartB =
+        long countFriendsStartB =
                 friends.stream().filter(startsWithB).count();
+
+        countFriendsStartN = friends.stream().filter(checkIfStartsWith("N")).count();
+        countFriendsStartB = friends.stream().filter(checkIfStartsWith("B")).count();
+
     }
 }
