@@ -2,6 +2,7 @@ package chapter2;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 /**
@@ -16,9 +17,14 @@ import java.util.function.Predicate;
 public class PickDifferentNames {
     public static Predicate<String> checkIfStartsWith(final String letter) {
         return name -> name.startsWith(letter);
-
     }
 
+    final Function<String, Predicate<String>> startsWithLetter =
+            (String letter) -> {
+                Predicate<String> checkStartsWith =
+                        (String name) -> name.startsWith(letter);
+                return checkStartsWith;
+            };
 
     public static void main(String[] args) {
         final List<String> friends =
