@@ -26,12 +26,19 @@ public class PickDifferentNames {
                 return checkStartsWith;
             };
 
+    final Function<String, Predicate<String>> startsWithLetter2 =
+            (String letter) -> (String name) -> name.startsWith(letter);
+
+    static final Function<String, Predicate<String>> startsWithLetter3 =
+            letter -> name -> name.startsWith(letter);
+
     public static void main(String[] args) {
         final List<String> friends =
                 Arrays.asList("Brian", "Nate", "Neal", "Raju", "Sara", "Scott");
 
         final Predicate<String> startsWithN = name -> name.startsWith("N");
         final Predicate<String> startsWithB = name -> name.startsWith("B");
+
         long countFriendsStartN =
                 friends.stream().filter(startsWithN).count();
         long countFriendsStartB =
@@ -39,6 +46,11 @@ public class PickDifferentNames {
 
         countFriendsStartN = friends.stream().filter(checkIfStartsWith("N")).count();
         countFriendsStartB = friends.stream().filter(checkIfStartsWith("B")).count();
+
+        final long countFriendsStartN1 =
+                friends.stream().filter(startsWithLetter3.apply("N")).count();
+        final long countFriendsStartB2 =
+                friends.stream().filter(startsWithLetter3.apply("B")).count();
 
     }
 }
