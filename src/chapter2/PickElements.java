@@ -15,6 +15,23 @@ import java.util.stream.Collectors;
  * To change this template use File | Settings | File Templates.
  */
 public class PickElements {
+    public static void pickName(
+            final List<String> names, final String startingLetter) {
+        String foundName = null;
+        for(String name : names) {
+            if(name.startsWith(startingLetter)) {
+                foundName = name;
+                break;
+            }
+        }
+        System.out.print(String.format("A name starting with %s: ", startingLetter));
+        if(foundName != null) {
+            System.out.println(foundName);
+        } else {
+            System.out.println("No name found");
+        }
+    }
+
     public static void main(String[] args) {
         final List<String> friends = Arrays.asList("SeokGon", "JuYeong", "DaYe", "SeungJun");
         final List<String> startsWithN = new ArrayList<String>();
