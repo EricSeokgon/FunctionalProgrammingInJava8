@@ -3,6 +3,8 @@ package chapter2;
 import java.util.List;
 import java.util.Optional;
 
+import static chapter2.Folks.friends;
+
 /**
  * Project: FunctionalProgrammingInJava8
  * FileName: PickAnElementElegant
@@ -21,5 +23,10 @@ public class PickAnElementElegant {
                         .findFirst();
         System.out.println(String.format("A name starting with %s: %s",
                 startingLetter, foundName.orElse("No name found")));
+    }
+
+    public static void main(String[] args) {
+        pickName(friends, "N");
+        pickName(friends, "Z");
     }
 }
