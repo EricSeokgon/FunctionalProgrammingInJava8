@@ -11,5 +11,10 @@ public class PickALongest {
                 friends.stream()
                         .mapToInt(name -> name.length())
                         .sum());
+
+        final String steveOrLonger =
+                friends.stream()
+                        .reduce("Steve", (name1, name2) ->
+                                name1.length() >= name2.length() ? name1 : name2);
     }
 }
