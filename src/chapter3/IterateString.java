@@ -22,7 +22,7 @@ public class IterateString {
                 .mapToObj(ch -> Character.valueOf((char)ch))
                 .forEach(System.out::println);
         str.chars()
-                .mapToObj(ch -> Character.valueOf((char)ch))
-                .forEach(System.out::println);
+                .filter(ch -> Character.isDigit(ch))
+                .forEach(ch -> printChar(ch));
     }
 }
