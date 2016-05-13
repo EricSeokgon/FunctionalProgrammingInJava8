@@ -11,18 +11,20 @@ package chapter3;
  */
 public class IterateString {
     private static void printChar(int aChar) {
-        System.out.println((char)(aChar));
+        System.out.println((char) (aChar));
     }
+
     public static void main(String[] args) {
         final String str = "w00t";
         str.chars().forEach(ch -> System.out.println(ch));
         str.chars().forEach(System.out::println);
         str.chars().forEach(IterateString::printChar);
         str.chars()
-                .mapToObj(ch -> Character.valueOf((char)ch))
+                .mapToObj(ch -> Character.valueOf((char) ch))
                 .forEach(System.out::println);
         str.chars()
                 .filter(ch -> Character.isDigit(ch))
                 .forEach(ch -> printChar(ch));
+        str.chars().filter(Character::isDigit).forEach(IterateString::printChar);
     }
 }
