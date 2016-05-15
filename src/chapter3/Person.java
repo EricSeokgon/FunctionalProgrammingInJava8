@@ -17,4 +17,21 @@ public class Person {
         this.name = name;
         this.age = age;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public int ageDifference(final Person other) {
+        return age - other.age;
+    }
+
+    public String toString() {
+        return String.format("%s - %d", name, age);
+    }
+
 }
