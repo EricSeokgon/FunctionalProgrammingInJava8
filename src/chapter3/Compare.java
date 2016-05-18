@@ -34,5 +34,10 @@ public class Compare {
                 .sorted((person1, person2)->person1.ageDifference(person2))
                 .collect(Collectors.toList());
         printPeople("sorted in ascending order of age : ", ascendingAge);
+
+        printPeople("Sorted in descending order of age: ",
+                people.stream()
+                        .sorted((person1, person2) -> person2.ageDifference(person1))
+                        .collect(Collectors.toList()));
     }
 }
