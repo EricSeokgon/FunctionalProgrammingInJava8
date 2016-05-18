@@ -1,8 +1,10 @@
 package chapter3;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.toList;
 
 /**
  * Project: FunctionalProgrammingInJava8
@@ -32,12 +34,27 @@ public class Compare {
         List<Person> ascendingAge =
                 people.stream()
                 .sorted((person1, person2)->person1.ageDifference(person2))
-                .collect(Collectors.toList());
+                .collect(toList());
         printPeople("sorted in ascending order of age : ", ascendingAge);
 
         printPeople("Sorted in descending order of age: ",
                 people.stream()
                         .sorted((person1, person2) -> person2.ageDifference(person1))
-                        .collect(Collectors.toList()));
+                        .collect(toList()));
+
+        Comparator<Person> compareAscending = (person1, person2) ->
+                person1.ageDifference(person2);
+        Comparator<Person> compareDescending = compareAscending.reversed();
+        printPeople("Sorted in ascending order of age: ",
+                people.stream()
+                        .sorted(compareAscending)
+                        .collect(toList())
+        );
+        printPeople("Sorted in descending order of age: ",
+                people.stream()
+                        .sorted(compareDescending)
+                        .collect(toList())
+        );
+
     }
 }
