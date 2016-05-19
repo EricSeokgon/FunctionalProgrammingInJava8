@@ -64,5 +64,11 @@ public class Compare {
                                 person1.getName().compareTo(person2.getName()))
                         .collect(toList()));
 
+        people.stream()
+                .min(Person::ageDifference)
+                .ifPresent(youngest -> System.out.println("Youngest: " + youngest));
+
     }
+
+
 }
