@@ -68,6 +68,10 @@ public class Compare {
                 .min(Person::ageDifference)
                 .ifPresent(youngest -> System.out.println("Youngest: " + youngest));
 
+        people.stream()
+                .max(Person::ageDifference)
+                .ifPresent(eldest -> System.out.println("Eldest: " + eldest));
+
     }
 
 
