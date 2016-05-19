@@ -21,7 +21,9 @@ public class Compare {
             final String message, final List<Person> people) {
         System.out.println(message);
         people.forEach(System.out::println);
-    };
+    }
+
+    ;
 
     public static void main(String[] args) {
 
@@ -33,8 +35,8 @@ public class Compare {
 
         List<Person> ascendingAge =
                 people.stream()
-                .sorted((person1, person2)->person1.ageDifference(person2))
-                .collect(toList());
+                        .sorted((person1, person2) -> person1.ageDifference(person2))
+                        .collect(toList());
         printPeople("sorted in ascending order of age : ", ascendingAge);
 
         printPeople("Sorted in descending order of age: ",
@@ -55,6 +57,12 @@ public class Compare {
                         .sorted(compareDescending)
                         .collect(toList())
         );
+
+        printPeople("Sorted in ascending order of name: ",
+                people.stream()
+                        .sorted((person1, person2) ->
+                                person1.getName().compareTo(person2.getName()))
+                        .collect(toList()));
 
     }
 }
