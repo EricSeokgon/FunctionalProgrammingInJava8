@@ -3,7 +3,9 @@ package chapter3;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Function;
 
+import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;
 
 /**
@@ -71,6 +73,9 @@ public class Compare {
         people.stream()
                 .max(Person::ageDifference)
                 .ifPresent(eldest -> System.out.println("Eldest: " + eldest));
+
+        final Function<Person, String> byName = person -> person.getName();
+        people.stream().sorted(comparing(byName));
 
     }
 
