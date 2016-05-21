@@ -77,6 +77,13 @@ public class Compare {
         final Function<Person, String> byName = person -> person.getName();
         people.stream().sorted(comparing(byName));
 
+        final Function<Person, Integer> byAge = person -> person.getAge();
+        final Function<Person, String> byTheirName = person -> person.getName();
+        printPeople("Sorted in ascending order of age and name: ",
+                people.stream()
+                        .sorted(comparing(byAge).thenComparing(byTheirName))
+                        .collect(toList()));
+
     }
 
 
