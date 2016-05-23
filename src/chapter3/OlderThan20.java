@@ -43,6 +43,5 @@ public class OlderThan20 {
                                 reducing(BinaryOperator.maxBy(byAge))));
         System.out.println("Oldest person in each alphabet:");
         System.out.println(oldestPersonInEachAlphabet);
-
     }
 }
