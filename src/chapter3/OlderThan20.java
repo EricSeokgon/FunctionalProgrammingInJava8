@@ -3,6 +3,7 @@ package chapter3;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Project: FunctionalProgrammingInJava8
@@ -26,5 +27,12 @@ public class OlderThan20 {
                 .filter(person -> person.getAge() > 20)
                 .forEach(person -> olderThan20.add(person));
         System.out.println("People older than 20: " + olderThan20);
+
+        List<Person> olderThan21 =
+                people.stream()
+                        .filter(person -> person.getAge() > 21)
+                        .collect(Collectors.toList());
+        System.out.println("People older than 21: " + olderThan21);
+
     }
 }
