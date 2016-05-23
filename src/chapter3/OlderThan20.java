@@ -1,9 +1,11 @@
 package chapter3;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.reducing;
 
 /**
  * Project: FunctionalProgrammingInJava8
@@ -33,6 +35,14 @@ public class OlderThan20 {
                         .filter(person -> person.getAge() > 21)
                         .collect(Collectors.toList());
         System.out.println("People older than 21: " + olderThan21);
+
+        Comparator<Person> byAge = Comparator.comparing(Person::getAge);
+        Map<Character, Optional<Person>> oldestPersonInEachAlphabet =
+                people.stream()
+                        .collect(groupingBy(person -> person.getName().charAt(0),
+                                reducing(BinaryOperator.maxBy(byAge))));
+        System.out.println("Oldest person in each alphabet:");
+        System.out.println(oldestPersonInEachAlphabet);
 
     }
 }
