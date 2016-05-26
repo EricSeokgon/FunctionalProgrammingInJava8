@@ -19,7 +19,7 @@ public class ListSelectFiles {
 
         {
             final String[] files =
-                    new File("fpij").list(new java.io.FilenameFilter() {
+                    new File("C:\\Users\\redfo\\IdeaProjects\\FunctionalProgrammingInJava8\\src\\chapter3\\").list(new java.io.FilenameFilter() {
                         public boolean accept(final File dir, final String name) {
                             return name.endsWith(".java");
                         }
@@ -30,7 +30,7 @@ public class ListSelectFiles {
         }
 
         Files.newDirectoryStream(
-                Paths.get("fpij"), path -> path.toString().endsWith(".java"))
+                Paths.get("C:\\Users\\redfo\\IdeaProjects\\FunctionalProgrammingInJava8\\src\\chapter3\\"), path -> path.toString().endsWith(".java"))
                 .forEach(System.out::println);
     }
 }
