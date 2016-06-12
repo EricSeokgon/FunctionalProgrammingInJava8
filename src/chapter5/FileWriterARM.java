@@ -31,4 +31,5 @@ public class FileWriterARM implements AutoCloseable {
             System.out.println("done with the resource...");
         }
     }
+
 }
