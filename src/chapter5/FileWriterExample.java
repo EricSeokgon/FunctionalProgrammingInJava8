@@ -47,6 +47,7 @@ public class FileWriterExample {
             writerExample.writeStuff("peek-a-boo");
         } finally {
             writerExample.close();
+
         }
     }
 }
