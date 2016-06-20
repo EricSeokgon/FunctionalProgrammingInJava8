@@ -1,5 +1,7 @@
 package chapter4;
 
+import java.util.function.Consumer;
+
 /**
  * Created by redfo on 2016-06-10.
  */

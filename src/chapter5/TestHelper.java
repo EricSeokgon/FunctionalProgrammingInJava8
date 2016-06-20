@@ -11,11 +11,11 @@ public class TestHelper {
 
         try {
             block.run();
-        } catch (Throwable ex) {
-            if (exceptionClass.isInstance(ex))
+        } catch(Throwable ex) {
+            if(exceptionClass.isInstance(ex))
                 return ex;
         }
-        fail("Failed to throw expected exception");
+        fail("Failed to throw expected exception ");
         return null;
     }
 }
