@@ -6,14 +6,9 @@ import org.junit.Test;
  * Created by hadeslee on 2016-06-20.
  */
 public class RodCutterTest {
-    @Test
-    public void VerboseExceptionTest() {
+    @Test(expected = RodCutterException.class)
+    public void TerseExceptionTest() {
         rodCutter.setPrices(prices);
-        try {
-            rodCutter.maxProfit(0);
-            fail("Expected exception for zero length");
-        } catch (RodCutterException ex) {
-            assertTure("expected", ture);
-        }
+        rodCutter.maxProfit(0);
     }
 }
