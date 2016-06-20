@@ -10,9 +10,11 @@ import static chapter5.Locker.runLocked;
  */
 public class Locking {
     Lock lock = new ReentrantLock(); //or mock
+
     protected void setLock(final Lock mock) {
         lock = mock;
     }
+
     public void doOp1() {
         lock.lock();
         try {
@@ -21,12 +23,15 @@ public class Locking {
             lock.unlock();
         }
     }
+
     public void doOp2() {
         runLocked(lock, () -> {/*...critical code ... */});
     }
+
     public void doOp3() {
         runLocked(lock, () -> {/*...critical code ... */});
     }
+
     public void doOp4() {
         runLocked(lock, () -> {/*...critical code ... */});
     }

@@ -12,9 +12,11 @@ public class FileWriterExample {
     public FileWriterExample(final String fileName) throws IOException {
         writer = new FileWriter(fileName);
     }
+
     public void writeStuff(final String message) throws IOException {
         writer.write(message);
     }
+
     public void finalize() throws IOException {
         writer.close();
     }
