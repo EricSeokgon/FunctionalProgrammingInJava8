@@ -1,5 +1,8 @@
 package chapter7;
 
+import static chapter7.TailCalls.call;
+import static chapter7.TailCalls.done;
+
 /**
  * Created by hadeslee on 2016-06-30.
  */
