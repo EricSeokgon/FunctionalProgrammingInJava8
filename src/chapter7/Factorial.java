@@ -8,7 +8,7 @@ import static chapter7.TailCalls.done;
  */
 public class Factorial {
     public static int factorialRec(final int number) {
-        if(number == 1)
+        if (number == 1)
             return number;
         else
             return number * factorialRec(number - 1);
@@ -34,7 +34,7 @@ public class Factorial {
         System.out.println("//" + "START:FACTREC_DISPLAY_LARGE_OUTPUT");
         try {
             System.out.println(factorialRec(20000));
-        } catch(StackOverflowError ex) {
+        } catch (StackOverflowError ex) {
             System.out.println(ex);
         }
         System.out.println("//" + "END:FACTREC_DISPLAY_LARGE_OUTPUT");
