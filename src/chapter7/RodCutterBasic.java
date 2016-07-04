@@ -1,5 +1,6 @@
 package chapter7;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -11,4 +12,7 @@ public class RodCutterBasic {
         prices = pricesForLength;
     }
 //...
+final List<Integer> priceValues =
+        Arrays.asList(2, 1, 1, 2, 2, 2, 1, 8, 9, 15);
+    final RodCutterBasic rodCutter = new RodCutterBasic(priceValues);
 }
