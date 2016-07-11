@@ -1,0 +1,17 @@
+package chapter8;
+
+/**
+ * Project: FunctionalProgrammingInJava8
+ * FileName: StockUtil
+ * Date: 2016-07-12
+ * Time: 오전 8:35
+ * Author: Hadeslee
+ * Note:
+ * To change this template use File | Settings | File Templates.
+ */
+public class StockUtil {
+    public static StockInfo getPrice(final String ticker) {
+        return new StockInfo(ticker, YahooFinance.getPrice(ticker));
+    }
+//...
+}
